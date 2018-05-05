@@ -18,7 +18,7 @@ do
 	files=`find $dir -maxdepth 1 -type f| grep -Ev "/\.|.gz"`
 	for file in $files
 	do
-	        if [[ "compress" = "1" ]]; then
+	        if [[ "$compress" = "1" ]]; then
 		 	mv $file $file.`date +%Y-%m-%d`.log
 			gzip -9 $file.`date +%Y-%m-%d`.log
 		else
