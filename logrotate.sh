@@ -26,7 +26,12 @@ do
 		fi	
 	done
 
-
+	if [[ "$retain" -gt "0" ]];
+	then
 	find $dir -maxdepth 1 -type f -name "*.log.gz" -mtime +$retain -exec rm -rf {} +
+	else
+	echo "No Rotation"
+	fi
+
 done
 
